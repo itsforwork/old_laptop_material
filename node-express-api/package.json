@@ -1,0 +1,21 @@
+{
+  "name": "express-api",
+  "version": "1.0.0",
+  "description": "this is tutorial for api",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [
+    "api",
+    "nodejs",
+    "express"
+  ],
+  "author": "srishti jain",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "uuid": "^9.0.0"
+  }
+}
