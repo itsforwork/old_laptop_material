@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cross{
+            text-decoration: line-through;
+        }
+    </style>
+    <!-- cdn of vue -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+<body>
+ <h1>hello</h1>  
+ <hr>
+
+ <!-- connect app : poori application is div k andr hogi , iske bhar vue kaam nahi karega-->
+ <div id="app">
+
+<!-- interpoliation -->
+<h2 v-once> Name : {{appName}} </h2>
+<!-- uses of directives -->
+<!-- this is called attribute binding -->
+<h2 v-bind:id='id'>ID: {{text}} </h2>
+<h2 v-bind:id='"hard coded id" '>ID: </h2>
+<!-- shortcut for v-bind -->
+<h2 :id='"hard " '>ID: </h2>
+<!-- we can do this with classes also -->
+
+<!-- method 1: by writting in single and double quotes -->
+<h2 v-bind:class="'cross'">line through</h2>
+<!-- method 2 : by creating a variable -->
+<!-- <h2 v-bind:class="cr">line through2</h2>e can use dynamic html directly in any where -->
+<div v-html='dynamicHtml'></div>
+<!-- we can give arguments also dynamically -->
+<h2 v-bind:[attr]="cr">hello</h2>
+<!-- use of methods -->
+<h1>counter: {{counter}}</h1>
+<button v-on:click="increment"> Increment the no.</button>
+<button @click="increment"> Increment the no.</button>
+<!-- we can call function by interpolation also, but here we have to call the function -->
+<h1> Date: {{showDate()}}</h1>
+
+
+ </div>
+</body>
+<script src="app.js"></script>
+</html>

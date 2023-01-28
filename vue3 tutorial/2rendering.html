@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <!-- cdn of vue -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <!-- v-if to DOM se hi hata dega elemet ko but v-show css me display none kardega  -->
+        <h1 v-if="showName">{{appName}}</h1>
+        <h1 v-show="showName">{{appName}}</h1>
+        <button @click="showName=!showName">Toggle</button>
+        <!-- if-else-is-else -->
+
+        <button @click="increment">increment users</button>
+        <h2 v-if="users==0">No users</h2>
+        <h2 v-else-if="users==1">{{users}} users</h2>
+        <h2 v-else> {{users}} users</h2>
+
+        <!-- for loop -->
+        <button @click="addToCart">Add to Cart</button>
+        <ul>
+            <li v-for="items in cart">
+                {{items}}
+
+            </li>
+        </ul>
+        if we want indexing also
+        <ul>
+            <li v-for="(items,i) in cart">
+               {{i+1}} {{items}}
+
+            </li>
+        </ul>
+       
+
+    </div>
+</body>
+<script src="2render.js"></script>
+</html>

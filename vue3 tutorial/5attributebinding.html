@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<style>
+    body {
+        background: #eee;
+        max-width: 960px;
+        margin: 20px auto;
+    }
+
+    p,
+    h4,
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        list-style-type: none;
+        background: #fff;
+        margin: 20px auto;
+        padding: 10px 20px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    li.fav {
+        background: #ff9ed2;
+        color: white;
+    }
+</style>
+
+<body>
+    <div id="app">
+        <div>
+            <h1>{{appName}}</h1>
+            <!-- attribute binding -->
+            <a :href="link">view link</a>
+            <ul>
+                <li v-for="book in books" :class="{ fav : book.isFav}" @click="changeColor(book)">
+                    <!-- these src and alt are called attributes, now we will bind this dynamically by using v-bin , and we can also have dynamic class by using key value pair-->
+                    <img :src="book.img" :alt="book.title">
+                    <h4>{{book.title}} </h4>
+                    <h4>{{book.author}}</h4>
+
+                </li>
+
+            </ul>
+        </div>
+        <hr>
+        <div>
+            <h1>computed property</h1>
+            <h4>Only favourite books will be shown here</h4>
+            <ul>
+                <li v-for="book in filteredBooks" :class="{ fav : book.isFav}" @click="changeColor(book)">
+
+                    <img :src="book.img" :alt="book.title">
+                    <h4>{{book.title}} </h4>
+                    <h4>{{book.author}}</h4>
+
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</body>
+<script src="5attribute.js"></script>
+
+</html>
